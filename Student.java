@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 /**
  * Created a Node class that will create a node with
  * data, content in node
@@ -9,12 +8,23 @@ import java.util.ArrayList;
 public class Student{
 	String studentName;
 	ArrayList<String> listOfPreferences = new ArrayList<>();
-	Student next;
 	
 	//Parameterized Constructor
 	public Student(String studentName, ArrayList<String> listOfPreferences) {
 		this.studentName = studentName;
 		this.listOfPreferences = listOfPreferences;
-		next = null;
 	}
+	
+	public String getStudentName() {
+		return this.studentName;
+	}
+	
+	public String getPreference(int index) {
+		return this.listOfPreferences.get(index);
+	}
+	
+	public int getNumberOfPreferences() {
+		return this.listOfPreferences.size();
+	}
+
 }
