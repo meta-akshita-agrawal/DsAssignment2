@@ -22,7 +22,7 @@ public class StackList implements Stack {
 	 * Creates a node p with data item in it
 	 * @param item to push
 	 */
-	public void push(String item) {
+	public void push(int item) {
 		if (isEmpty() == true) {
 			Node p = new Node(item);
 			top = p; //simply updating top with new node p
@@ -37,8 +37,8 @@ public class StackList implements Stack {
 	 * Pops the top item from stack
 	 * change top to next pointer of top
 	 */
-	public String pop() {
-		String temp;
+	public int pop() {
+		int temp;
 		if (isEmpty() == true) {
 			throw new AssertionError("Stack is empty. Nothing to pop.");//throws error if nothing to pop
 		} else {
@@ -66,9 +66,9 @@ public class StackList implements Stack {
 	 * adds each node data to an array
 	 * @return stack, array created 
 	 */
-	public String[] getStack() {
+	public int[] getStack() {
 		int size = getSize();//adding size as number of nodes in the list
-		String[] stack = new String[size];
+		int[] stack = new int[size];
 
 		Node pointer = top;
 
@@ -78,10 +78,6 @@ public class StackList implements Stack {
 		}
 
 		return stack;
-	}
-	
-	public String top() {
-		return top.data;
 	}
 
 }
