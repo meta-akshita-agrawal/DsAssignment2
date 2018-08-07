@@ -1,4 +1,3 @@
-
 public interface CircularQueue {
 
 	boolean isEmpty();//checks if queue is empty

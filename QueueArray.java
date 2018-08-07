@@ -38,7 +38,7 @@ public class QueueArray implements CircularQueue {
 		
 		else{
 			this.array[rear+1] = item;//adding item at rear
-			System.out.println(front + " " +( rear + 1) + " " + array[rear+1]);
+			//System.out.println(front + " " +( rear + 1) + " " + array[rear+1]);
 			rear++;
 		}
 		if(rear == arraySize-1){
@@ -64,7 +64,19 @@ public class QueueArray implements CircularQueue {
 	 * @return queue with alloted items only
 	 */
 	public int[] getQueue() {
-		int[] queue = new int[arraySize];
+		
+		int length = (rear - front) + 1;
+		int queueSize  = 0;
+		
+		if(length > 0) {
+			queueSize = length;
+		}
+		else {
+			rear = arraySize + rear;
+			queueSize = Math.abs(front - rear) + 1;
+		}
+	
+		int[] queue = new int[queueSize];
 		for (int i = 0; i < queue.length; i++) {
 			queue[i] = this.array[i];
 		}
